@@ -101,6 +101,8 @@ def collect(tok: str) -> dict:
              contributionsCollection{
                totalCommitContributions totalPullRequestContributions
                totalIssueContributions totalRepositoriesWithContributedCommits
+               contributionCalendar{ totalContributions
+                 weeks{ contributionDays{ date contributionCount } } }
              }
              repositories(first:100, ownerAffiliations:OWNER, privacy:PUBLIC){ totalCount }
            }}""",
@@ -121,6 +123,8 @@ def collect(tok: str) -> dict:
         "prs": cc["totalPullRequestContributions"],
         "issues": cc["totalIssueContributions"],
         "active": cc["totalRepositoriesWithContributedCommits"],
+        "days": [d for w in cc["contributionCalendar"]["weeks"] for d in w["contributionDays"]],
+        "year_total": cc["contributionCalendar"]["totalContributions"],
         "langs": dict(sorted(langs.items(), key=lambda kv: -kv[1])),
     }
 
@@ -231,13 +235,118 @@ def langs_svg(d: dict) -> str:
 """
 
 
+def heatmap_svg(d: dict) -> str:
+    days = d["days"]
+    step = (620 - 68 - 8) / max(len(days) / 7, 1)
+    cell = step - 2.6
+    levels = ["#101828", "#17392f", "#1f6a4e", "#2fa877", "#63e6d2"]
+
+    cols: list[str] = []
+    week = 0
+    for i in range(0, len(days) - 6, 7):
+        chunk = days[i:i + 7]
+        cells = []
+        for row, day in enumerate(chunk):
+            n = day["contributionCount"]
+            lvl = 0 if n == 0 else 1 if n == 1 else 2 if n <= 3 else 3 if n <= 6 else 4
+            x = 34 + week * step
+            y = 116 + row * step
+            cells.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{cell:.1f}" height="{cell:.1f}" rx="2" fill="{levels[lvl]}"/>')
+        cols.append(f'<g>{''.join(cells)}</g>')
+        week += 1
+
+    labels = []
+    prev_month = None
+    last_label_week = -99
+    month_names = {"01": "Jan", "02": "Feb", "03": "Mar", "04": "Apr", "05": "May", "06": "Jun",
+                   "07": "Jul", "08": "Aug", "09": "Sep", "10": "Oct", "11": "Nov", "12": "Dec"}
+    for w in range(week):
+        day = days[min(w * 7 + 1, len(days) - 1)]
+        month = day["date"][5:7]
+        if month != prev_month and (w - last_label_week) >= 4:
+            labels.append(
+                f'<text x="{34 + w * step:.1f}" y="108" font-family="{MONO}" font-size="9.5" fill="{DIM}">{month_names[month]}</text>'
+            )
+            last_label_week = w
+        prev_month = month
+
+    best = cur = 0
+    for day in days:
+        if day["contributionCount"] > 0:
+            cur += 1
+            best = max(best, cur)
+        else:
+            cur = 0
+    streak_now = 0
+    for day in reversed(days):
+        if day["contributionCount"] > 0:
+            streak_now += 1
+        else:
+            break
+    active_days = sum(1 for day in days if day["contributionCount"] > 0)
+
+    tiles = [
+        ("CURRENT STREAK", streak_now, CYAN),
+        ("LONGEST STREAK", best, GREEN),
+        ("ACTIVE DAYS", active_days, VIOLET),
+    ]
+    tile_svg = "".join(
+        f'<g transform="translate({34 + i * 190} 208)">'
+        f'<rect x="0" y="0" width="168" height="56" rx="12" fill="#0C1422" stroke="#1A2438" stroke-width="1"/>'
+        f'<rect x="0" y="0" width="4" height="56" rx="2" fill="{color}" opacity="0.85"/>'
+        f'<text x="18" y="23" font-family="{MONO}" font-size="9.5" letter-spacing="1.2" fill="{DIM}">{label}</text>'
+        f'<text x="18" y="46" font-family="{MONO}" font-size="20" font-weight="700" fill="{BRIGHT}">{value}</text>'
+        f"</g>"
+        for i, (label, value, color) in enumerate(tiles)
+    )
+
+    return f"""<svg width="620" height="330" viewBox="0 0 620 330" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution calendar">
+  <title>Contribution calendar for {LOGIN}</title>
+  <defs>
+    <linearGradient id="hbg" x1="0" y1="0" x2="620" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#080d15"/><stop offset="1" stop-color="#070a12"/>
+    </linearGradient>
+    <linearGradient id="hneon" x1="0" y1="0" x2="620" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="{GREEN}"/><stop offset="0.5" stop-color="{CYAN}"/><stop offset="1" stop-color="{VIOLET}"/>
+    </linearGradient>
+    <clipPath id="hclip"><rect x="1" y="1" width="618" height="328" rx="22"/></clipPath>
+    <style>
+      @keyframes fade {{ from {{ opacity:0; }} to {{ opacity:1; }} }}
+      .run {{ stroke-dasharray:260 1500; animation:run 9s linear infinite; }}
+      @keyframes run {{ 0% {{ stroke-dashoffset:1760; }} 100% {{ stroke-dashoffset:0; }} }}
+      @media (prefers-reduced-motion: reduce) {{ .run {{ animation:none; }} }}
+    </style>
+  </defs>
+  <g clip-path="url(#hclip)">
+    <rect width="620" height="330" fill="url(#hbg)"/>
+    <text x="34" y="52" font-family="{MONO}" font-size="12" letter-spacing="2.6" fill="{DIM}">LAST 12 MONTHS</text>
+    <text x="34" y="86" font-family="{SANS}" font-size="25" font-weight="700" fill="{BRIGHT}">Every square is a day I shipped</text>
+    {''.join(labels)}
+    {''.join(cols)}
+    {tile_svg}
+    <g transform="translate(34 302)">
+      <text x="0" y="0" font-family="{MONO}" font-size="12" fill="{TEXT}">{d['year_total']} contributions in the last year</text>
+    </g>
+    <g transform="translate(452 298)">
+      <text x="0" y="3" font-family="{MONO}" font-size="10" fill="{DIM}">less</text>
+      {''.join(f'<rect x="{32 + i * 13}" y="-6" width="9" height="9" rx="2" fill="{levels[i]}"/>' for i in range(5))}
+      <text x="103" y="3" font-family="{MONO}" font-size="10" fill="{DIM}">more</text>
+    </g>
+    <rect x="1" y="1" width="618" height="328" rx="22" fill="none" stroke="{BORDER}" stroke-width="1.3"/>
+    <rect class="run" x="1" y="1" width="618" height="328" rx="22" fill="none" stroke="url(#hneon)" stroke-width="1.6"/>
+  </g>
+</svg>
+"""
+
+
 def main() -> None:
     tok = token()
     data = collect(tok)
     ASSETS.mkdir(exist_ok=True)
     (ASSETS / "stats.svg").write_text(stats_svg(data), encoding="utf-8")
     (ASSETS / "langs.svg").write_text(langs_svg(data), encoding="utf-8")
-    print(json.dumps({k: v for k, v in data.items() if k != "langs"}, ensure_ascii=False))
+    (ASSETS / "heatmap.svg").write_text(heatmap_svg(data), encoding="utf-8")
+    print(json.dumps({k: v for k, v in data.items() if k not in ("langs", "days")}, ensure_ascii=False))
     print("langs:", ", ".join(f"{k} {human(v)}" for k, v in list(data["langs"].items())[:6]))
 
 

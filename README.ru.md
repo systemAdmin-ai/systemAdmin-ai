@@ -4,11 +4,9 @@
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3400&pause=900&color=63E6D2&center=true&vCenter=true&width=720&lines=macOS+%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F+%D0%BD%D0%B0+Swift;%D1%87%D1%91%D0%BB%D0%BA%D0%B0+%D0%BA%D0%B0%D0%BA+%D1%86%D0%B5%D0%BD%D1%82%D1%80+%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F;%D0%B2%D1%81%D1%91+%D0%B2+%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%BE%D0%BC+%D0%BA%D0%BE%D0%B4%D0%B5;%D0%BF%D0%BE%D0%B8%D1%81%D0%BA+%D0%B4%D0%B5%D1%88%D1%91%D0%B2%D1%8B%D1%85+%D1%81%D0%BA%D0%B8%D0%BD%D0%BE%D0%B2+CS2" alt="чем занимаюсь"/>
+<img src="assets/typing.svg" width="720" alt="чем занимаюсь"/>
 
 <br/>
-
-[![Просмотры профиля](https://komarev.com/ghpvc/?username=systemAdmin-ai&label=profile+views&color=63e6d2&style=flat-square)](https://github.com/systemAdmin-ai)
 
 [English](README.md) · **Русский**
 
@@ -57,10 +55,10 @@ brew install --cask systemAdmin-ai/notchdeck/notchdeck
 
 <div align="center">
 
-[![Скачать DMG](https://img.shields.io/badge/Скачать-DMG-3ddc97?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/systemAdmin-ai/NotchDeck/releases/latest/download/NotchDeck.dmg)
-[![Сайт](https://img.shields.io/badge/Сайт-0b0e14?style=for-the-badge&logo=gitbook&logoColor=63e6d2)](https://systemAdmin-ai.github.io/NotchDeck/)
-[![Демо](https://img.shields.io/badge/Интерактивное_демо-0b0e14?style=for-the-badge&logo=html5&logoColor=63e6d2)](https://systemAdmin-ai.github.io/NotchDeck/demo.html)
-[![Исходники](https://img.shields.io/badge/Исходники-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/systemAdmin-ai/NotchDeck)
+[![Скачать DMG](assets/btn-download.svg)](https://github.com/systemAdmin-ai/NotchDeck/releases/latest/download/NotchDeck.dmg)
+[![Сайт](assets/btn-site.svg)](https://systemAdmin-ai.github.io/NotchDeck/)
+[![Демо](assets/btn-demo.svg)](https://systemAdmin-ai.github.io/NotchDeck/demo.html)
+[![Исходники](assets/btn-source.svg)](https://github.com/systemAdmin-ai/NotchDeck)
 
 </div>
 
@@ -79,8 +77,9 @@ brew install --cask systemAdmin-ai/notchdeck/notchdeck
 
 <div align="center">
 
-[![Открыть SkinRadar](https://img.shields.io/badge/Открыть-SkinRadar-7c5cff?style=for-the-badge&logo=target&logoColor=white)](https://systemAdmin-ai.github.io/skinradar-site/)
-[![Статус](https://img.shields.io/badge/статус-в_разработке-a78bfa?style=for-the-badge)](https://systemAdmin-ai.github.io/skinradar-site/)
+[![Открыть SkinRadar](assets/btn-skinradar.svg)](https://systemAdmin-ai.github.io/skinradar-site/)
+
+<sub>статус — в разработке</sub>
 
 </div>
 
@@ -90,13 +89,13 @@ brew install --cask systemAdmin-ai/notchdeck/notchdeck
 
 <div align="center">
 
-![Swift](https://img.shields.io/badge/Swift-F05138?logo=swift&logoColor=white&style=for-the-badge)
-![SwiftUI](https://img.shields.io/badge/SwiftUI-0b0e14?logo=swift&logoColor=63e6d2&style=for-the-badge)
-![macOS](https://img.shields.io/badge/macOS-000000?logo=apple&logoColor=white&style=for-the-badge)
-![Shell](https://img.shields.io/badge/Shell-4EAA25?logo=gnubash&logoColor=white&style=for-the-badge)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge)
-![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-F38020?logo=cloudflare&logoColor=white&style=for-the-badge)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white&style=for-the-badge)
+<img src="assets/badge-swift.svg" alt="Swift"/>
+<img src="assets/badge-swiftui.svg" alt="SwiftUI"/>
+<img src="assets/badge-macos.svg" alt="macOS"/>
+<img src="assets/badge-shell.svg" alt="Shell"/>
+<img src="assets/badge-javascript.svg" alt="JavaScript"/>
+<img src="assets/badge-cloudflare.svg" alt="Cloudflare Workers"/>
+<img src="assets/badge-actions.svg" alt="GitHub Actions"/>
 
 </div>
 
@@ -113,11 +112,11 @@ brew install --cask systemAdmin-ai/notchdeck/notchdeck
 </tr>
 </table>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=systemAdmin-ai&hide_border=true&background=0A0F18&stroke=1B2740&ring=63E6D2&fire=7C5CFF&currStreakLabel=63E6D2&sideLabels=A9BCD8&dates=6D7F9C&currStreakNum=E8F1FF&sideNums=E8F1FF" width="620" alt="серия коммитов"/>
+<img src="assets/heatmap.svg" width="620" alt="календарь активности"/>
 
 </div>
 
-> Карточки слева собирает [`scripts/gen_stats.py`](scripts/gen_stats.py) из GitHub API, обновление — каждую ночь. Никаких сторонних картинок-сервисов.
+> Все карточки здесь собирает [`scripts/gen_stats.py`](scripts/gen_stats.py) из GitHub API, обновление — каждую ночь. Бейджи, кнопки и строка с набором текста — тоже локальные SVG, ничего не зависит от сторонних сервисов картинок.
 
 ---
 

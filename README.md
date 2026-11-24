@@ -4,11 +4,9 @@
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3400&pause=900&color=63E6D2&center=true&vCenter=true&width=720&lines=macOS+apps+in+Swift+and+SwiftUI;building+the+notch+control+center;shipping+it+in+the+open;finding+cheaper+CS2+skins" alt="what I do"/>
+<img src="assets/typing.svg" width="720" alt="what I do"/>
 
 <br/>
-
-[![Profile views](https://komarev.com/ghpvc/?username=systemAdmin-ai&label=profile+views&color=63e6d2&style=flat-square)](https://github.com/systemAdmin-ai)
 
 **English** · [Русский](README.ru.md)
 
@@ -57,10 +55,10 @@ Every release ships `SHA256SUMS.txt` and a signed checksum — the build can be 
 
 <div align="center">
 
-[![Download DMG](https://img.shields.io/badge/Download-DMG-3ddc97?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/systemAdmin-ai/NotchDeck/releases/latest/download/NotchDeck.dmg)
-[![Website](https://img.shields.io/badge/Website-0b0e14?style=for-the-badge&logo=gitbook&logoColor=63e6d2)](https://systemAdmin-ai.github.io/NotchDeck/)
-[![Demo](https://img.shields.io/badge/Interactive_demo-0b0e14?style=for-the-badge&logo=html5&logoColor=63e6d2)](https://systemAdmin-ai.github.io/NotchDeck/demo.html)
-[![Source](https://img.shields.io/badge/Source-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/systemAdmin-ai/NotchDeck)
+[![Download DMG](assets/btn-download.svg)](https://github.com/systemAdmin-ai/NotchDeck/releases/latest/download/NotchDeck.dmg)
+[![Website](assets/btn-site.svg)](https://systemAdmin-ai.github.io/NotchDeck/)
+[![Interactive demo](assets/btn-demo.svg)](https://systemAdmin-ai.github.io/NotchDeck/demo.html)
+[![Source](assets/btn-source.svg)](https://github.com/systemAdmin-ai/NotchDeck)
 
 </div>
 
@@ -79,8 +77,9 @@ Static site and account area are live; the search core is being rebuilt. It's an
 
 <div align="center">
 
-[![Open SkinRadar](https://img.shields.io/badge/Open-SkinRadar-7c5cff?style=for-the-badge&logo=target&logoColor=white)](https://systemAdmin-ai.github.io/skinradar-site/)
-[![Status](https://img.shields.io/badge/status-in_development-a78bfa?style=for-the-badge)](https://systemAdmin-ai.github.io/skinradar-site/)
+[![Open SkinRadar](assets/btn-skinradar.svg)](https://systemAdmin-ai.github.io/skinradar-site/)
+
+<sub>status — in development</sub>
 
 </div>
 
@@ -90,13 +89,13 @@ Static site and account area are live; the search core is being rebuilt. It's an
 
 <div align="center">
 
-![Swift](https://img.shields.io/badge/Swift-F05138?logo=swift&logoColor=white&style=for-the-badge)
-![SwiftUI](https://img.shields.io/badge/SwiftUI-0b0e14?logo=swift&logoColor=63e6d2&style=for-the-badge)
-![macOS](https://img.shields.io/badge/macOS-000000?logo=apple&logoColor=white&style=for-the-badge)
-![Shell](https://img.shields.io/badge/Shell-4EAA25?logo=gnubash&logoColor=white&style=for-the-badge)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge)
-![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-F38020?logo=cloudflare&logoColor=white&style=for-the-badge)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white&style=for-the-badge)
+<img src="assets/badge-swift.svg" alt="Swift"/>
+<img src="assets/badge-swiftui.svg" alt="SwiftUI"/>
+<img src="assets/badge-macos.svg" alt="macOS"/>
+<img src="assets/badge-shell.svg" alt="Shell"/>
+<img src="assets/badge-javascript.svg" alt="JavaScript"/>
+<img src="assets/badge-cloudflare.svg" alt="Cloudflare Workers"/>
+<img src="assets/badge-actions.svg" alt="GitHub Actions"/>
 
 </div>
 
@@ -113,11 +112,11 @@ Static site and account area are live; the search core is being rebuilt. It's an
 </tr>
 </table>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=systemAdmin-ai&hide_border=true&background=0A0F18&stroke=1B2740&ring=63E6D2&fire=7C5CFF&currStreakLabel=63E6D2&sideLabels=A9BCD8&dates=6D7F9C&currStreakNum=E8F1FF&sideNums=E8F1FF" width="620" alt="streak"/>
+<img src="assets/heatmap.svg" width="620" alt="contribution calendar"/>
 
 </div>
 
-> Cards on the left are generated from the GitHub API by [`scripts/gen_stats.py`](scripts/gen_stats.py) and refreshed nightly — no third-party image services.
+> Every card here is generated from the GitHub API by [`scripts/gen_stats.py`](scripts/gen_stats.py) and refreshed nightly. Badges, buttons and the typing line are also local SVGs — nothing here depends on a third-party image service.
 
 ---
 

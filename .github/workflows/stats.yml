@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Regenerate assets/stats.svg and assets/langs.svg
+      - name: Regenerate the stats, language and calendar cards
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/gen_stats.py
@@ -36,7 +36,7 @@ jobs:
           if git diff --quiet -- assets/; then
             echo "no changes"
           else
-            git add assets/stats.svg assets/langs.svg
+            git add assets/stats.svg assets/langs.svg assets/heatmap.svg
             git commit -m "chore: refresh stats cards"
             git push
           fi
