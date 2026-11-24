@@ -70,29 +70,33 @@
       .hudD { animation: hudD 16s linear infinite; }
 
       @keyframes hudA {
-        0%   { opacity: 0; transform: translateY(7px); }
-        2%   { opacity: 1; transform: translateY(0); }
+        0%   { opacity: 1; transform: translateY(0); }
         23%  { opacity: 1; transform: translateY(0); }
-        25%  { opacity: 0; transform: translateY(-7px); }
-        100% { opacity: 0; transform: translateY(-7px); }
+        26%  { opacity: 0; transform: translateY(-7px); }
+        97%  { opacity: 0; transform: translateY(7px); }
+        100% { opacity: 1; transform: translateY(0); }
       }
       @keyframes hudB {
-        0%, 25% { opacity: 0; transform: translateY(7px); }
-        27%  { opacity: 1; transform: translateY(0); }
+        0%   { opacity: 0; transform: translateY(7px); }
+        23%  { opacity: 0; transform: translateY(7px); }
+        26%  { opacity: 1; transform: translateY(0); }
         48%  { opacity: 1; transform: translateY(0); }
-        50%, 100% { opacity: 0; transform: translateY(-7px); }
+        51%  { opacity: 0; transform: translateY(-7px); }
+        100% { opacity: 0; transform: translateY(-7px); }
       }
       @keyframes hudC {
-        0%, 50% { opacity: 0; transform: translateY(7px); }
-        52%  { opacity: 1; transform: translateY(0); }
+        0%   { opacity: 0; transform: translateY(7px); }
+        48%  { opacity: 0; transform: translateY(7px); }
+        51%  { opacity: 1; transform: translateY(0); }
         73%  { opacity: 1; transform: translateY(0); }
-        75%, 100% { opacity: 0; transform: translateY(-7px); }
+        76%  { opacity: 0; transform: translateY(-7px); }
+        100% { opacity: 0; transform: translateY(-7px); }
       }
       @keyframes hudD {
-        0%   { opacity: 0; transform: translateY(-7px); }
-        75%  { opacity: 0; transform: translateY(7px); }
-        77%  { opacity: 1; transform: translateY(0); }
-        98%  { opacity: 1; transform: translateY(0); }
+        0%   { opacity: 0; transform: translateY(7px); }
+        73%  { opacity: 0; transform: translateY(7px); }
+        76%  { opacity: 1; transform: translateY(0); }
+        97%  { opacity: 1; transform: translateY(0); }
         100% { opacity: 0; transform: translateY(-7px); }
       }
 
