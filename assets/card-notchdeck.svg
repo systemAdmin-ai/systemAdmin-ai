@@ -1,0 +1,71 @@
+<svg width="620" height="330" viewBox="0 0 620 330" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NotchDeck — neon notch control center for MacBook">
+  <title>NotchDeck — neon notch control center for MacBook</title>
+  <defs>
+    <linearGradient id="c1bg" x1="0" y1="0" x2="620" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0a0f18"/><stop offset="1" stop-color="#070a12"/>
+    </linearGradient>
+    <linearGradient id="c1neon" x1="0" y1="0" x2="620" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3ddc97"/><stop offset="0.55" stop-color="#63e6d2"/><stop offset="1" stop-color="#7c5cff"/>
+    </linearGradient>
+    <radialGradient id="c1halo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(310 40) scale(300 120)">
+      <stop stop-color="#63e6d2" stop-opacity="0.26"/><stop offset="1" stop-color="#63e6d2" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="c1clip"><rect x="1" y="1" width="618" height="328" rx="22"/></clipPath>
+    <style>
+      .run { stroke-dasharray: 300 1500; animation: run 7s linear infinite; }
+      @keyframes run { 0% { stroke-dashoffset: 1800; } 100% { stroke-dashoffset: 0; } }
+      .blink { animation: blink 2.4s ease-in-out infinite; }
+      @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+      .pulse { animation: pulse 4s ease-in-out infinite; }
+      @keyframes pulse { 0%,100% { opacity: 0.35; transform: scale(1); } 50% { opacity: 0.9; transform: scale(1.08); } }
+      @media (prefers-reduced-motion: reduce) { .run, .blink, .pulse { animation: none; } }
+    </style>
+  </defs>
+  <g clip-path="url(#c1clip)">
+    <rect width="620" height="330" fill="url(#c1bg)"/>
+    <ellipse class="pulse" cx="310" cy="30" rx="300" ry="110" fill="url(#c1halo)"/>
+
+    <g transform="translate(34 34)">
+      <rect x="0" y="0" width="52" height="52" rx="14" fill="#0b1220" stroke="#1e2c46" stroke-width="1.2"/>
+      <path d="M6 10 h40 a6 6 0 0 1 6 6 v3 h-52 v-3 a6 6 0 0 1 6 -6 z" fill="#05070c" stroke="#63e6d2" stroke-width="1.3"/>
+      <circle class="blink" cx="26" cy="18" r="2.2" fill="#63e6d2"/>
+    </g>
+
+    <text x="102" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#e8f1ff">NotchDeck</text>
+    <text x="102" y="82" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" fill="#7f93b4">neon notch control center for MacBook</text>
+
+    <g transform="translate(34 108)">
+      <rect x="0" y="0" width="112" height="26" rx="13" fill="#0d1a16" stroke="#2b5a4a" stroke-width="1"/>
+      <circle class="blink" cx="15" cy="13" r="3.4" fill="#3ddc97"/>
+      <text x="26" y="18" font-family="ui-monospace, Menlo, monospace" font-size="11" letter-spacing="0.6" fill="#63e6d2">v2.2.0 · live</text>
+    </g>
+    <g transform="translate(154 108)">
+      <rect x="0" y="0" width="96" height="26" rx="13" fill="#0e1424" stroke="#25324d" stroke-width="1"/>
+      <text x="14" y="18" font-family="ui-monospace, Menlo, monospace" font-size="11" letter-spacing="0.6" fill="#93a6c4">MIT · Swift</text>
+    </g>
+    <g transform="translate(258 108)">
+      <rect x="0" y="0" width="118" height="26" rx="13" fill="#0e1424" stroke="#25324d" stroke-width="1"/>
+      <text x="14" y="18" font-family="ui-monospace, Menlo, monospace" font-size="11" letter-spacing="0.6" fill="#93a6c4">macOS 14+ · arm64</text>
+    </g>
+
+    <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#a9bcd8">
+      <text x="34" y="172">› system metrics, media, notes and screen recording</text>
+      <text x="34" y="198">› keyboard mode: Windows habits on a Mac keyboard</text>
+      <text x="34" y="224">› eight themes, charging glow, now-playing, alerts</text>
+    </g>
+
+    <g transform="translate(34 252)">
+      <rect x="0" y="0" width="150" height="34" rx="9" fill="#0f2a22" stroke="#2f6f57" stroke-width="1"/>
+      <text x="14" y="22" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#63e6d2">brew install --cask</text>
+    </g>
+    <g transform="translate(194 252)">
+      <rect x="0" y="0" width="128" height="34" rx="9" fill="#0c1322" stroke="#233149" stroke-width="1"/>
+      <text x="14" y="22" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#8ea3c4">Download DMG</text>
+    </g>
+
+    <text x="586" y="276" text-anchor="end" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#5f7392">8 ★ · open source</text>
+
+    <rect x="1" y="1" width="618" height="328" rx="22" fill="none" stroke="#1b2740" stroke-width="1.3"/>
+    <rect class="run" x="1" y="1" width="618" height="328" rx="22" fill="none" stroke="url(#c1neon)" stroke-width="1.6"/>
+  </g>
+</svg>

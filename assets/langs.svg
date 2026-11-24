@@ -1,0 +1,69 @@
+<svg width="620" height="330" viewBox="0 0 620 330" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Languages used by systemAdmin-ai">
+  <title>Languages used by systemAdmin-ai</title>
+  <defs>
+    <linearGradient id="lbg" x1="0" y1="0" x2="620" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#080d15"/><stop offset="1" stop-color="#070a12"/>
+    </linearGradient>
+    <linearGradient id="lneon" x1="0" y1="0" x2="620" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7c5cff"/><stop offset="0.5" stop-color="#63e6d2"/><stop offset="1" stop-color="#3ddc97"/>
+    </linearGradient>
+    <clipPath id="lclip"><rect x="1" y="1" width="618" height="328" rx="22"/></clipPath>
+    <style>
+      @keyframes grow { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+      .run { stroke-dasharray:240 1500; animation:run 8.5s linear infinite; }
+      @keyframes run { 0% { stroke-dashoffset:1740; } 100% { stroke-dashoffset:0; } }
+      @media (prefers-reduced-motion: reduce) { .run { animation:none; } }
+    </style>
+  </defs>
+  <g clip-path="url(#lclip)">
+    <rect width="620" height="330" fill="url(#lbg)"/>
+    <text x="34" y="52" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.6" fill="#6d7f9c">LANGUAGES BY CODE</text>
+    <text x="34" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="25" font-weight="700" fill="#e8f1ff">Swift first, then whatever ships it</text>
+    <text x="34" y="112" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#6d7f9c">bytes of code across public repositories</text>
+    
+    <g>
+      <text x="34" y="138" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" fill="#a9bcd8">Swift</text>
+      <rect x="140" y="128" width="396" height="9" rx="4.5" fill="#111a2a"/>
+      <rect x="140" y="128" width="356.2" height="9" rx="4.5" fill="#63e6d2" opacity="0.9"
+            style="transform-origin:140px 133px; animation:grow .9s ease forwards 0.10s; transform:scaleX(0)"/>
+      <text x="586" y="138" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#6d7f9c">90.0%</text>
+    </g>
+    <g>
+      <text x="34" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" fill="#a9bcd8">Shell</text>
+      <rect x="140" y="158" width="396" height="9" rx="4.5" fill="#111a2a"/>
+      <rect x="140" y="158" width="18.7" height="9" rx="4.5" fill="#7c5cff" opacity="0.9"
+            style="transform-origin:140px 163px; animation:grow .9s ease forwards 0.19s; transform:scaleX(0)"/>
+      <text x="586" y="168" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#6d7f9c">4.7%</text>
+    </g>
+    <g>
+      <text x="34" y="198" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" fill="#a9bcd8">JavaScript</text>
+      <rect x="140" y="188" width="396" height="9" rx="4.5" fill="#111a2a"/>
+      <rect x="140" y="188" width="6.7" height="9" rx="4.5" fill="#3ddc97" opacity="0.9"
+            style="transform-origin:140px 193px; animation:grow .9s ease forwards 0.28s; transform:scaleX(0)"/>
+      <text x="586" y="198" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#6d7f9c">1.7%</text>
+    </g>
+    <g>
+      <text x="34" y="228" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" fill="#a9bcd8">HTML</text>
+      <rect x="140" y="218" width="396" height="9" rx="4.5" fill="#111a2a"/>
+      <rect x="140" y="218" width="6.6" height="9" rx="4.5" fill="#f2b84b" opacity="0.9"
+            style="transform-origin:140px 223px; animation:grow .9s ease forwards 0.37s; transform:scaleX(0)"/>
+      <text x="586" y="228" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#6d7f9c">1.7%</text>
+    </g>
+    <g>
+      <text x="34" y="258" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" fill="#a9bcd8">CSS</text>
+      <rect x="140" y="248" width="396" height="9" rx="4.5" fill="#111a2a"/>
+      <rect x="140" y="248" width="5.3" height="9" rx="4.5" fill="#ff7a9c" opacity="0.9"
+            style="transform-origin:140px 253px; animation:grow .9s ease forwards 0.46s; transform:scaleX(0)"/>
+      <text x="586" y="258" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#6d7f9c">1.3%</text>
+    </g>
+    <g>
+      <text x="34" y="288" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" fill="#a9bcd8">Python</text>
+      <rect x="140" y="278" width="396" height="9" rx="4.5" fill="#111a2a"/>
+      <rect x="140" y="278" width="4.0" height="9" rx="4.5" fill="#4da3ff" opacity="0.9"
+            style="transform-origin:140px 283px; animation:grow .9s ease forwards 0.55s; transform:scaleX(0)"/>
+      <text x="586" y="288" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#6d7f9c">0.5%</text>
+    </g>
+    <rect x="1" y="1" width="618" height="328" rx="22" fill="none" stroke="#1b2740" stroke-width="1.3"/>
+    <rect class="run" x="1" y="1" width="618" height="328" rx="22" fill="none" stroke="url(#lneon)" stroke-width="1.6"/>
+  </g>
+</svg>
