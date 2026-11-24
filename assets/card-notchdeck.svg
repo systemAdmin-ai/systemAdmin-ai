@@ -18,7 +18,16 @@
       @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
       .pulse { animation: pulse 4s ease-in-out infinite; }
       @keyframes pulse { 0%,100% { opacity: 0.35; transform: scale(1); } 50% { opacity: 0.9; transform: scale(1.08); } }
-      @media (prefers-reduced-motion: reduce) { .run, .blink, .pulse { animation: none; } }
+      .miniA { animation: miniA 6s linear infinite; }
+      .miniB { animation: miniB 6s linear infinite; }
+      @keyframes miniA { 0%, 44% { opacity: 1; } 50%, 94% { opacity: 0; } 100% { opacity: 1; } }
+      @keyframes miniB { 0%, 44% { opacity: 0; } 50%, 94% { opacity: 1; } 100% { opacity: 0; } }
+      .mbarA, .mbarB { stroke-dasharray: 100; stroke-dashoffset: 100; }
+      .mbarA { animation: mbarA 6s linear infinite; }
+      .mbarB { animation: mbarB 6s linear infinite; }
+      @keyframes mbarA { 0% { stroke-dashoffset: 100; } 8% { stroke-dashoffset: 18; } 44% { stroke-dashoffset: 18; } 49% { stroke-dashoffset: 100; } 100% { stroke-dashoffset: 100; } }
+      @keyframes mbarB { 0%, 50% { stroke-dashoffset: 100; } 58% { stroke-dashoffset: 55; } 94% { stroke-dashoffset: 55; } 99% { stroke-dashoffset: 100; } 100% { stroke-dashoffset: 100; } }
+      @media (prefers-reduced-motion: reduce) { .run, .blink, .pulse, .miniA, .miniB, .mbarA, .mbarB { animation: none; } .miniB { opacity: 0; } }
     </style>
   </defs>
   <g clip-path="url(#c1clip)">
@@ -64,6 +73,32 @@
     </g>
 
     <text x="586" y="276" text-anchor="end" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#5f7392">8 ★ · open source</text>
+
+    <!-- mini HUD: brightness and volume take turns -->
+    <g transform="translate(400 24)">
+      <rect x="0" y="0" width="186" height="58" rx="15" fill="#07110e" stroke="#1d3a30" stroke-width="1"/>
+      <g class="miniA">
+        <g transform="translate(20 24)" stroke="#3ddc97" fill="none" stroke-width="1.3" stroke-linecap="round">
+          <circle cx="0" cy="0" r="4.4"/>
+          <circle cx="0" cy="0" r="7.8" stroke-dasharray="1.6 3" opacity="0.85"/>
+        </g>
+        <text x="38" y="22" font-family="ui-monospace, Menlo, monospace" font-size="8.5" letter-spacing="1.3" fill="#6d9c88">BRIGHTNESS</text>
+        <text x="170" y="22" text-anchor="end" font-family="ui-monospace, Menlo, monospace" font-size="10.5" font-weight="700" fill="#cfeee1">78%</text>
+        <line x1="14" y1="42" x2="172" y2="42" stroke="#14271f" stroke-width="6" stroke-linecap="round"/>
+        <line class="mbarA" x1="14" y1="42" x2="172" y2="42" stroke="#3ddc97" stroke-width="6" stroke-linecap="round" pathLength="100"/>
+      </g>
+      <g class="miniB">
+        <g transform="translate(20 24)" fill="none" stroke="#63e6d2" stroke-width="1.3" stroke-linejoin="round">
+          <path d="M-7 -3.4 h3.4 l4 -4 v14.4 l-4 -4 h-3.4 z"/>
+          <path d="M3.6 -3 a5 5 0 0 1 0 6" opacity="0.9"/>
+          <path d="M6.8 -6 a8.6 8.6 0 0 1 0 12" opacity="0.5"/>
+        </g>
+        <text x="38" y="22" font-family="ui-monospace, Menlo, monospace" font-size="8.5" letter-spacing="1.3" fill="#5f8e97">VOLUME</text>
+        <text x="170" y="22" text-anchor="end" font-family="ui-monospace, Menlo, monospace" font-size="10.5" font-weight="700" fill="#cdeff3">45%</text>
+        <line x1="14" y1="42" x2="172" y2="42" stroke="#13242a" stroke-width="6" stroke-linecap="round"/>
+        <line class="mbarB" x1="14" y1="42" x2="172" y2="42" stroke="#63e6d2" stroke-width="6" stroke-linecap="round" pathLength="100"/>
+      </g>
+    </g>
 
     <rect x="1" y="1" width="618" height="328" rx="22" fill="none" stroke="#1b2740" stroke-width="1.3"/>
     <rect class="run" x="1" y="1" width="618" height="328" rx="22" fill="none" stroke="url(#c1neon)" stroke-width="1.6"/>

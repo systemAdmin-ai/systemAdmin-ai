@@ -1,7 +1,7 @@
-<svg width="1280" height="360" viewBox="0 0 1280 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="systemAdmin-ai — macOS apps, Swift, open source">
-  <title>systemAdmin-ai — macOS apps, Swift, open source</title>
+<svg width="1280" height="420" viewBox="0 0 1280 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="systemAdmin-ai — native macOS apps for the notch: brightness, volume and notification glow">
+  <title>systemAdmin-ai — native macOS apps for the notch</title>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="360" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="420" gradientUnits="userSpaceOnUse">
       <stop stop-color="#080a10"/>
       <stop offset="0.5" stop-color="#0c1220"/>
       <stop offset="1" stop-color="#080a10"/>
@@ -11,15 +11,18 @@
       <stop offset="0.5" stop-color="#63e6d2"/>
       <stop offset="1" stop-color="#7c5cff"/>
     </linearGradient>
-    <linearGradient id="shine" x1="0" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#63e6d2" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.95"/>
-      <stop offset="1" stop-color="#63e6d2" stop-opacity="0"/>
+    <linearGradient id="barG" x1="0" y1="0" x2="296" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3ddc97"/>
+      <stop offset="1" stop-color="#63e6d2"/>
     </linearGradient>
     <radialGradient id="halo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(640 96) scale(420 150)">
       <stop stop-color="#63e6d2" stop-opacity="0.32"/>
       <stop offset="0.55" stop-color="#3ddc97" stop-opacity="0.10"/>
       <stop offset="1" stop-color="#7c5cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="notchGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(640 292) scale(210 74)">
+      <stop stop-color="#63e6d2" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#63e6d2" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M48 0H0V48" stroke="#16203a" stroke-width="1"/>
@@ -27,12 +30,17 @@
     <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="10"/>
     </filter>
+    <filter id="soft2" x="-60%" y="-120%" width="220%" height="340%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
     <clipPath id="frame">
-      <rect x="1" y="1" width="1278" height="358" rx="26"/>
+      <rect x="1" y="1" width="1278" height="418" rx="26"/>
+    </clipPath>
+    <clipPath id="panelClip">
+      <rect x="-170" y="-29" width="340" height="58" rx="16"/>
     </clipPath>
     <style>
       .pulse { animation: pulse 5.5s ease-in-out infinite; }
-      .pulse2 { animation: pulse 5.5s ease-in-out infinite 1.2s; }
       @keyframes pulse {
         0%, 100% { opacity: 0.45; transform: scale(1); }
         50% { opacity: 1; transform: scale(1.06); }
@@ -42,15 +50,6 @@
         0% { stroke-dashoffset: 1120; }
         100% { stroke-dashoffset: 0; }
       }
-      .shine { animation: shine 6s ease-in-out infinite; }
-      @keyframes shine {
-        0% { transform: translateX(-460px); opacity: 0; }
-        12% { opacity: 1; }
-        55% { transform: translateX(1000px); opacity: 0; }
-        100% { transform: translateX(1000px); opacity: 0; }
-      }
-      .cursor { animation: blink 1.1s step-end infinite; }
-      @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
       .float { animation: float 7s ease-in-out infinite; }
       .float2 { animation: float 8.5s ease-in-out infinite 0.8s; }
       .float3 { animation: float 9.5s ease-in-out infinite 1.6s; }
@@ -63,25 +62,99 @@
         0%, 100% { transform: translateX(0); }
         50% { transform: translateX(-40px); }
       }
+
+      /* -- notch HUD: four states, 16s loop -- */
+      .hudA { animation: hudA 16s linear infinite; }
+      .hudB { animation: hudB 16s linear infinite; }
+      .hudC { animation: hudC 16s linear infinite; }
+      .hudD { animation: hudD 16s linear infinite; }
+
+      @keyframes hudA {
+        0%   { opacity: 0; transform: translateY(7px); }
+        2%   { opacity: 1; transform: translateY(0); }
+        23%  { opacity: 1; transform: translateY(0); }
+        25%  { opacity: 0; transform: translateY(-7px); }
+        100% { opacity: 0; transform: translateY(-7px); }
+      }
+      @keyframes hudB {
+        0%, 25% { opacity: 0; transform: translateY(7px); }
+        27%  { opacity: 1; transform: translateY(0); }
+        48%  { opacity: 1; transform: translateY(0); }
+        50%, 100% { opacity: 0; transform: translateY(-7px); }
+      }
+      @keyframes hudC {
+        0%, 50% { opacity: 0; transform: translateY(7px); }
+        52%  { opacity: 1; transform: translateY(0); }
+        73%  { opacity: 1; transform: translateY(0); }
+        75%, 100% { opacity: 0; transform: translateY(-7px); }
+      }
+      @keyframes hudD {
+        0%   { opacity: 0; transform: translateY(-7px); }
+        75%  { opacity: 0; transform: translateY(7px); }
+        77%  { opacity: 1; transform: translateY(0); }
+        98%  { opacity: 1; transform: translateY(0); }
+        100% { opacity: 0; transform: translateY(-7px); }
+      }
+
+      .barA, .barB, .barD { stroke-dasharray: 100; stroke-dashoffset: 100; }
+      .barA { animation: barA 16s linear infinite; }
+      .barB { animation: barB 16s linear infinite; }
+      .barD { animation: barD 16s linear infinite; }
+      @keyframes barA {
+        0%   { stroke-dashoffset: 100; }
+        6%   { stroke-dashoffset: 22; }
+        19%  { stroke-dashoffset: 22; }
+        24%  { stroke-dashoffset: 100; }
+        100% { stroke-dashoffset: 100; }
+      }
+      @keyframes barB {
+        0%, 28% { stroke-dashoffset: 100; }
+        34%  { stroke-dashoffset: 55; }
+        44%  { stroke-dashoffset: 55; }
+        49%  { stroke-dashoffset: 100; }
+        100% { stroke-dashoffset: 100; }
+      }
+      @keyframes barD {
+        0%, 78% { stroke-dashoffset: 100; }
+        82%  { stroke-dashoffset: 16; }
+        95%  { stroke-dashoffset: 16; }
+        99%  { stroke-dashoffset: 100; }
+        100% { stroke-dashoffset: 100; }
+      }
+
+      .ring { transform-box: fill-box; transform-origin: center; animation: ring 16s ease-in-out infinite; }
+      @keyframes ring {
+        0%, 76% { opacity: 0; transform: scale(0.7); }
+        80% { opacity: 0.9; transform: scale(1); }
+        92% { opacity: 0; transform: scale(1.5); }
+        100% { opacity: 0; transform: scale(0.7); }
+      }
+
+      .blink { animation: blink 1.4s step-end infinite; }
+      @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0.15; } }
+
       @media (prefers-reduced-motion: reduce) {
-        .pulse, .pulse2, .dash, .shine, .cursor, .float, .float2, .float3, .wave { animation: none; }
+        .pulse, .dash, .float, .float2, .float3, .wave,
+        .barA, .barB, .barD, .ring, .blink { animation: none; }
+        .hudA { opacity: 1; animation: none; }
+        .hudB, .hudC, .hudD { opacity: 0; animation: none; }
       }
     </style>
   </defs>
 
   <g clip-path="url(#frame)">
-    <rect width="1280" height="360" fill="url(#bg)"/>
-    <rect width="1280" height="360" fill="url(#grid)" opacity="0.55"/>
+    <rect width="1280" height="420" fill="url(#bg)"/>
+    <rect width="1280" height="420" fill="url(#grid)" opacity="0.55"/>
     <ellipse class="pulse" cx="640" cy="86" rx="430" ry="150" fill="url(#halo)"/>
 
     <g class="wave" opacity="0.5">
-      <path d="M-40 300 C 180 250, 360 350, 620 300 C 880 250, 1080 330, 1320 286" stroke="url(#neon)" stroke-width="1.4" fill="none" opacity="0.55"/>
-      <path d="M-40 322 C 200 276, 400 366, 660 318 C 920 270, 1120 348, 1320 306" stroke="url(#neon)" stroke-width="1" fill="none" opacity="0.3"/>
+      <path d="M-40 356 C 180 306, 360 406, 620 356 C 880 306, 1080 386, 1320 342" stroke="url(#neon)" stroke-width="1.4" fill="none" opacity="0.5"/>
+      <path d="M-40 380 C 200 334, 400 424, 660 376 C 920 328, 1120 406, 1320 364" stroke="url(#neon)" stroke-width="1" fill="none" opacity="0.28"/>
     </g>
 
     <g class="float"><circle cx="188" cy="126" r="2.6" fill="#63e6d2"/></g>
     <g class="float2"><circle cx="1092" cy="96" r="2" fill="#7c5cff"/></g>
-    <g class="float3"><circle cx="980" cy="228" r="2.4" fill="#3ddc97"/></g>
+    <g class="float3"><circle cx="998" cy="240" r="2.4" fill="#3ddc97"/></g>
     <g class="float2"><circle cx="268" cy="236" r="1.8" fill="#63e6d2"/></g>
     <g class="float"><circle cx="820" cy="72" r="1.6" fill="#63e6d2"/></g>
 
@@ -94,22 +167,108 @@
 
     <g transform="translate(640 176)">
       <text x="0" y="0" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="62" font-weight="700" letter-spacing="-1.2" fill="url(#neon)">systemAdmin-ai</text>
-      <g class="shine"><text x="0" y="0" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="62" font-weight="700" letter-spacing="-1.2" fill="url(#shine)">systemAdmin-ai</text></g>
     </g>
 
     <g transform="translate(640 226)">
-      <text x="0" y="0" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="19" fill="#9fb2d0">I build native macOS apps for the notch — and tools that find cheaper CS2 skins</text>
+      <text x="0" y="0" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="19" fill="#b6c7e2">I build native macOS apps for the notch — and tools that find cheaper CS2 skins</text>
     </g>
 
-    <g transform="translate(640 268)" opacity="0.85">
-      <rect x="-40" y="-16" width="80" height="50" rx="7" fill="none" stroke="#2a3a5c" stroke-width="1.4"/>
-      <path d="M-14 -16 h28 a6 6 0 0 1 6 6 v2 h-40 v-2 a6 6 0 0 1 6 -6 z" fill="#05070c" stroke="#63e6d2" stroke-width="1.3"/>
-      <circle class="pulse2" cx="0" cy="4" r="2" fill="#63e6d2"/>
+    <!-- the notch itself: top edge of the screen with a camera housing -->
+    <g transform="translate(640 292)">
+      <ellipse cx="0" cy="0" rx="215" ry="72" fill="url(#notchGlow)" opacity="0.55"/>
+      <rect x="-232" y="-18" width="464" height="36" rx="11" fill="#070a12" stroke="#1b2740" stroke-width="1.2"/>
+      <path d="M-66 -18 h132 a10 10 0 0 1 10 10 v2 h-152 v-2 a10 10 0 0 1 10 -10 z" fill="#01030a" stroke="#243554" stroke-width="1"/>
+      <circle cx="0" cy="-6" r="3.2" fill="#0b1428" stroke="#2a3a5c" stroke-width="0.9"/>
+      <circle cx="0" cy="-6" r="1.1" fill="#1d3f6b"/>
+      <circle cx="-208" cy="0" r="3" fill="#2a3a5c"/>
+      <rect x="-192" y="-1.5" width="26" height="3" rx="1.5" fill="#2f4166"/>
+      <rect x="-160" y="-1.5" width="18" height="3" rx="1.5" fill="#26365a"/>
+      <rect x="-136" y="-1.5" width="24" height="3" rx="1.5" fill="#26365a"/>
+      <g opacity="0.9">
+        <rect x="120" y="-5" width="20" height="10" rx="3" fill="none" stroke="#2f4166" stroke-width="1"/>
+        <rect x="122" y="-3" width="12" height="6" rx="1.5" fill="#3ddc97" opacity="0.8"/>
+        <rect x="141" y="-2" width="2" height="4" rx="1" fill="#2f4166"/>
+      </g>
+      <g stroke="#2f4166" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.85">
+        <path d="M92 -6 a10 10 0 0 1 14 0"/>
+        <path d="M96 -2 a5 5 0 0 1 6 0"/>
+      </g>
+    </g>
+
+    <!-- HUD state 1 · brightness -->
+    <g transform="translate(640 352)">
+      <g class="hudA">
+        <ellipse cx="0" cy="-42" rx="190" ry="52" fill="#3ddc97" opacity="0.16" filter="url(#soft2)"/>
+        <rect x="-170" y="-29" width="340" height="58" rx="16" fill="#07110e" stroke="#1d3a30" stroke-width="1.2"/>
+        <rect x="-170" y="-29" width="340" height="58" rx="16" fill="none" stroke="#3ddc97" stroke-width="1" opacity="0.35"/>
+        <g transform="translate(-142 0)" stroke="#3ddc97" fill="none" stroke-width="1.5" stroke-linecap="round">
+          <circle cx="0" cy="0" r="6"/>
+          <circle cx="0" cy="0" r="10.5" stroke-dasharray="2 3.6" opacity="0.85"/>
+        </g>
+        <text x="-122" y="-4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" letter-spacing="1.8" fill="#86c0a8">BRIGHTNESS</text>
+        <text x="148" y="-3" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="700" fill="#cfeee1">78%</text>
+        <line x1="-148" y1="14" x2="148" y2="14" stroke="#14271f" stroke-width="9" stroke-linecap="round"/>
+        <line class="barA" x1="-148" y1="14" x2="148" y2="14" stroke="url(#barG)" stroke-width="9" stroke-linecap="round" pathLength="100"/>
+        <circle class="blink" cx="148" cy="14" r="2.6" fill="#3ddc97"/>
+      </g>
+    </g>
+
+    <!-- HUD state 2 · volume -->
+    <g transform="translate(640 352)">
+      <g class="hudB">
+        <ellipse cx="0" cy="-42" rx="190" ry="52" fill="#63e6d2" opacity="0.16" filter="url(#soft2)"/>
+        <rect x="-170" y="-29" width="340" height="58" rx="16" fill="#061013" stroke="#1b3a44" stroke-width="1.2"/>
+        <rect x="-170" y="-29" width="340" height="58" rx="16" fill="none" stroke="#63e6d2" stroke-width="1" opacity="0.35"/>
+        <g transform="translate(-142 0)" fill="none" stroke="#63e6d2" stroke-width="1.5" stroke-linejoin="round">
+          <path d="M-9 -4 h4 l5 -5 v18 l-5 -5 h-4 z"/>
+          <path d="M4 -4 a6 6 0 0 1 0 8" opacity="0.9"/>
+          <path d="M8 -7.5 a10 10 0 0 1 0 15" opacity="0.55"/>
+        </g>
+        <text x="-122" y="-4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" letter-spacing="1.8" fill="#7fb3bd">VOLUME</text>
+        <text x="148" y="-3" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="700" fill="#cdeff3">45%</text>
+        <line x1="-148" y1="14" x2="148" y2="14" stroke="#13242a" stroke-width="9" stroke-linecap="round"/>
+        <line class="barB" x1="-148" y1="14" x2="148" y2="14" stroke="#63e6d2" stroke-width="9" stroke-linecap="round" pathLength="100"/>
+      </g>
+    </g>
+
+    <!-- HUD state 3 · notification -->
+    <g transform="translate(640 352)">
+      <g class="hudC">
+        <ellipse cx="0" cy="-42" rx="190" ry="52" fill="#7c5cff" opacity="0.18" filter="url(#soft2)"/>
+        <rect x="-170" y="-29" width="340" height="58" rx="16" fill="#0b0817" stroke="#2a2350" stroke-width="1.2"/>
+        <rect x="-170" y="-29" width="340" height="58" rx="16" fill="none" stroke="#a78bfa" stroke-width="1" opacity="0.4"/>
+        <circle cx="-142" cy="0" r="11" fill="#150f2c" stroke="#7c5cff" stroke-width="1.2"/>
+        <g transform="translate(-142 0)" fill="none" stroke="#c4b5fd" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M-5.5 3.4 h11 l-1.7 -2.5 v-2.5 a4.3 4.3 0 0 0 -7.6 0 v2.5 z"/>
+          <path d="M-1.7 5.5 a1.9 1.9 0 0 0 3.4 0"/>
+        </g>
+        <text x="-122" y="-4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#e2d9ff">NotchDeck</text>
+        <text x="-122" y="13" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#9b8fc4">2.2.0 · build ready</text>
+        <text x="148" y="-2" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#6b5f96">now</text>
+        <circle cx="148" cy="12" r="3" fill="#a78bfa" opacity="0.9"/>
+      </g>
+    </g>
+
+    <!-- HUD state 4 · charging -->
+    <g transform="translate(640 352)">
+      <g class="hudD">
+        <ellipse cx="0" cy="-42" rx="190" ry="52" fill="#3ddc97" opacity="0.2" filter="url(#soft2)"/>
+        <circle class="ring" cx="0" cy="-18" r="14" fill="none" stroke="#63e6d2" stroke-width="1.2"/>
+        <rect x="-170" y="-29" width="340" height="58" rx="16" fill="#07120f" stroke="#1d3d31" stroke-width="1.2"/>
+        <rect x="-170" y="-29" width="340" height="58" rx="16" fill="none" stroke="#3ddc97" stroke-width="1" opacity="0.4"/>
+        <g transform="translate(-142 0)" fill="none" stroke="#3ddc97" stroke-width="1.5" stroke-linejoin="round">
+          <path d="M-4 -9 l-7 10 h5 l-4 9 l11 -11 h-5 z" fill="#3ddc97" fill-opacity="0.18"/>
+        </g>
+        <text x="-122" y="-4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" letter-spacing="1.8" fill="#86c0a8">CHARGING</text>
+        <text x="148" y="-3" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="700" fill="#cfeee1">84%</text>
+        <line x1="-148" y1="14" x2="148" y2="14" stroke="#14271f" stroke-width="9" stroke-linecap="round"/>
+        <line class="barD" x1="-148" y1="14" x2="148" y2="14" stroke="url(#barG)" stroke-width="9" stroke-linecap="round" pathLength="100"/>
+      </g>
     </g>
 
     <g opacity="0.9">
-      <rect x="1" y="1" width="1278" height="358" rx="26" fill="none" stroke="#1b2740" stroke-width="1.4"/>
-      <rect x="1" y="1" width="1278" height="358" rx="26" fill="none" stroke="url(#neon)" stroke-width="1.2" opacity="0.35"/>
+      <rect x="1" y="1" width="1278" height="418" rx="26" fill="none" stroke="#1b2740" stroke-width="1.4"/>
+      <rect x="1" y="1" width="1278" height="418" rx="26" fill="none" stroke="url(#neon)" stroke-width="1.2" opacity="0.35"/>
     </g>
   </g>
 </svg>
