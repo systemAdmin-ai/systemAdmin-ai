@@ -40,7 +40,7 @@
       <rect x="0" y="0" width="168" height="72" rx="14" fill="#0c1422" stroke="#1a2438" stroke-width="1"/>
       <rect x="0" y="0" width="4" height="72" rx="2" fill="#7c5cff" opacity="0.85"/>
       <text x="20" y="28" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" letter-spacing="1.4" fill="#6d7f9c">COMMITS · 12 MO</text>
-      <text x="20" y="58" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="26" font-weight="700" fill="#e8f1ff">41</text>
+      <text x="20" y="58" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="26" font-weight="700" fill="#e8f1ff">42</text>
     </g></g>
     <g transform="translate(34 220)"><g style="animation:fade .9s ease forwards 0.42s">
       <rect x="0" y="0" width="168" height="72" rx="14" fill="#0c1422" stroke="#1a2438" stroke-width="1"/>
